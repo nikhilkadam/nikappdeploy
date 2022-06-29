@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nik-cisco-app
+  name: nik-cisco-app
+  namespace: nikdeploy-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nik-cisco-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nik-cisco-app
+    spec:
+      containers:
+      - image: demonik9211/nikwebapp-new:ciscov1
+        name: nikwebapp-new
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always # everytime pull image
+        resources: # restricting pod container in term of resoruces
+          requests:
+            cpu: 100m
+            memory: 200M
+          limits:
+            cpu: 200m
+            memory: 300M
