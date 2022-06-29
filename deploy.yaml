@@ -19,7 +19,7 @@ spec:
         app: nik-cisco-app
     spec:
       containers:
-      - image: demonik9211/nikwebapp-new:ciscov1
+      - image: demonik9211/nikwebapp-new:ciscov2
         name: nikwebapp-new
         ports:
         - containerPort: 80
